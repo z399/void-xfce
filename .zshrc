@@ -32,6 +32,23 @@ DO_RUN_TRIM() {
 }
 
 
+
+##Grep
+#======
+grep_string() {
+   echo "enter string name: " 
+   read string
+   grep -rnw -e "$string"
+}
+
+grep_file_folder() {
+   echo "enter file/folder name: " 
+   read file
+   find . | grep "$file" 
+   
+}
+
+
 ##Git
 #=====
 
