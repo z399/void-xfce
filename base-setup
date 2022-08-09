@@ -36,8 +36,8 @@ sudo xbps-reconfigure -f fontconfig
 #EndSection ' >> /etc/X11/xorg.conf.d/30-touchpad.conf
 
 
-#sudo echo "load-module module-switch-on-connect" > /etc/pulse/default.pa 
-#sudo echo "echo 1 > /sys/class/backlight/amdgpu_bl0/brightness" > /etc/rc.local
+#sudo echo "load-module module-switch-on-connect" >> /etc/pulse/default.pa 
+#sudo echo "echo 0 > /sys/class/backlight/amdgpu_bl0/brightness" > /etc/rc.local
 #(do not run) sudo xbps-install mesa-vaapi mesa-vdpau
 #sudo echo "blacklist nouveau" > /usr/lib/modprobe.d/blacklist.conf
 #sudo touch /etc/modprobe.d/nouveau_blacklist.conf 
