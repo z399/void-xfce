@@ -2,7 +2,7 @@
 
 MAIN_PKGS() {
 sudo xbps-install -Syu -u xbps && sudo xbps-install -Syu
-sudo xbps-install -Syu xfce4 xfce4-whiskermenu-plugin thunar-archive-plugin tree pulseaudio bluez blueman xfce4-pulseaudio-plugin pavucontrol papirus-icon-theme arc-theme evince torbrowser-launcher gnome-calculator scrot qbittorrent mpv firefox chromium torbrowser-launcher github-cli yt-dlp neofetch ntfs-3g xorg-minimal mesa xorg-fonts network-manager-applet telegram-desktop gvfs-mtp gvfs xz file-roller os-prober vim git xf86-input-libinput 
+sudo xbps-install -Syu xfce4 xfce4-whiskermenu-plugin thunar-archive-plugin tree pipewire libspa-bluetooth bluez blueman papirus-icon-theme arc-theme evince torbrowser-launcher gnome-calculator scrot qbittorrent mpv firefox chromium torbrowser-launcher github-cli yt-dlp neofetch ntfs-3g xorg-minimal mesa xorg-fonts network-manager-applet telegram-desktop gvfs-mtp gvfs xz file-roller os-prober vim git xf86-input-libinput 
 
 #model=$(lscpu | grep 'Model name')
 #case "$model" in
@@ -17,7 +17,7 @@ START_SERVICES(){
 
 sudo ln -s /etc/sv/bluetoothd /var/service
 sudo ln -s /etc/sv/polkitd /var/service
-sudo ln -s /etc/sv/rtkit /var/service
+#sudo ln -s /etc/sv/rtkit /var/service
 sudo ln -s /etc/sv/elogind /var/service
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 sudo xbps-reconfigure -f fontconfig
