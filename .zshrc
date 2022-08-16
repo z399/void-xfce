@@ -14,7 +14,7 @@ alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
 alias shutdown="sudo shutdown"
 alias zzz="sudo zzz"
-alias ZZZ="sudo ZZZ" 
+
 
 alias Scc="sudo rm /var/cache/xbps/*"
 
