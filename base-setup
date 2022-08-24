@@ -1,12 +1,22 @@
 #!/bin/bash
 
 MAIN_PKGS() {
+
+model=$(lscpu | grep 'Model name')
+
+case "$model" in
+    *Intel*) GPUDRE="xf86-video-intel" ;;
+    *AMD*) GPUDRE="xf86-video-amdgpu";;	
+esac
+
+printf "$GPUDRE"
+
 sudo xbps-install -Syu -u xbps && sudo xbps-install -Syu
 sudo xbps-install -Syu xfce4 xfce4-whiskermenu-plugin thunar-archive-plugin tree \ 
 pipewire libspa-bluetooth pavucontrol xfce4-pulseaudio-plugin bluez blueman papirus-icon-theme \
 arc-theme evince torbrowser-launcher gnome-calculator scrot qbittorrent mpv firefox chromium \ 
 torbrowser-launcher github-cli yt-dlp neofetch ntfs-3g xorg-minimal mesa xorg-fonts network-manager-applet \
-telegram-desktop gvfs-mtp gvfs xz file-roller os-prober vim git xf86-input-libinput 
+telegram-desktop gvfs-mtp gvfs xz file-roller os-prober $GPUDRE xf86-input-libinput 
 
 #model=$(lscpu | grep 'Model name')
 #case "$model" in
