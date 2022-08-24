@@ -19,6 +19,16 @@ alias zzz="sudo zzz"
 alias Scc="sudo rm /var/cache/xbps/*"
 
 
+dc() {
+echo "Meaning of $1 " 
+#DEFN=$(curl -s https://api.dictionaryapi.dev/api/v2/entries/en/$WORD | python3 -mjson.tool | grep definition | sed 's/"//g;s/definition//g;s/://g;s/s//g;s/\[//g')
+DEFN=$(curl -s https://api.dictionaryapi.dev/api/v2/entries/en/$1 | python3 -mjson.tool | grep definition | sed 's/"//g;s/://g;s/\[//g')
+SOUND=$(curl -s https://api.dictionaryapi.dev/api/v2/entries/en/$1 | python3 -mjson.tool | grep audio | head -4 | tail -1 | awk '{print $2}' | sed 's/"//g;s/,//g')
+echo $DEFN
+mpv $SOUND --really-quiet 
+}
+
+
 ##Trim
 #======
 
